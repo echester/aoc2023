@@ -2,6 +2,8 @@
 A repo for my efforts for AoC 2023. Because I can't not. Argh. 
 Here's what its all about: [[aoc2023](https://adventofcode.com)]
 
+Something about flow and automation in here. One day.
+
 ## Day 1 - ?
 _"It's easy to be enthusiastic at this point."_
 
