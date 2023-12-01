@@ -26,7 +26,7 @@ Strictly, these aren't all needed since (for example), no numbers begin with 'r'
 In part 1, I started out trying to grab the first and last digit with a regex, but that fell over on the test input when there was only a single digit which needed to be captured twice.
 I'm thankful I threw this approach out quickly, because it would have completely failed for part 2. As it was, part 2 took me about 1 minute of thinking and 1 minute of implement/test, because I had stopped thinking about the digits and was just manipulating the strings. The above substitutions remove all the edge cases, then I remove everything that isn't a digit, then only keep the first and last chars, and just accumulate it all. I am pretty algorithmically happy with that approach.
 
-Time for sleep, as I've been up all night testing ranging with NASA Lunar Reconaissance Orbiter for Intuitive Machines. Fun times.
+Time for sleep, as I've been up all night testing ranging with NASA Lunar Reconnaissance Orbiter for Intuitive Machines. Fun times.
 
 ## Day 2 - ?
 _" "_
