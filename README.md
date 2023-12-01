@@ -9,7 +9,8 @@ Here's what its all about: [[aoc2023](https://adventofcode.com)]
 _"It's easy to be enthusiastic at this point."_
 
 This was good fun, because it took me an _age_ to realise that letters were shared between written numbers... note to self to read the examples very carefully. I was worried about having to progressively build strings up from the left to replace only the first digit, but then hit upon a set of substitutions that respects the overlaps:
-`
+
+```
 s/one/o1e/g;
 s/two/t2o/g;
 s/three/t3e/g;
@@ -19,7 +20,7 @@ s/six/s6x/g;
 s/seven/s7n/g;
 s/eight/e8t/g;
 s/nine/n9e/g;
-`
+```
 
 Strictly, these aren't all needed since (for example), no numbers begin with 'r' or 'x', but it was cleaner to show the working. Time for sleep, as I've been up all night testing ranging with NASA Lunar Reconaissance Orbiter for Intuitive Machines. Fun times.
 
