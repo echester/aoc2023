@@ -2,12 +2,29 @@
 A repo for my efforts for AoC 2023. Because I can't not. Argh. 
 Here's what its all about: [[aoc2023](https://adventofcode.com)]
 
-Something about flow and automation in here. One day.
+## Day 1 - Trebuchet?!
 
-## Day 1 - ?
+[PERL]
+
 _"It's easy to be enthusiastic at this point."_
 
-Assembling, sorting and slicing an array; classic opener for AoC.
+This was good fun, because it took me an _age_ to realise that letters were shared between written numbers... note to self to read the examples very carefully. I was worried about having to progressively build strings up from the left to replace only the first digit, but then hit upon a set of substitutions that respects the overlaps:
+`
+s/one/o1e/g;
+s/two/t2o/g;
+s/three/t3e/g;
+s/four/f4r/g;
+s/five/f5e/g;
+s/six/s6x/g;
+s/seven/s7n/g;
+s/eight/e8t/g;
+s/nine/n9e/g;
+`
+
+Strictly, these aren't all needed since (for example), no numbers begin with 'r' or 'x', but it was cleaner to show the working. Time for sleep, as I've been up all night testing ranging with NASA Lunar Reconaissance Orbiter for Intuitive Machines. Fun times.
+
+
+
 
 ## Day 2 - ?
 _" "_
