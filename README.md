@@ -30,8 +30,20 @@ As it was, part 2 took me about 1 minute of thinking and 1 minute of implement/t
 
 Time for sleep, as I've been up all night testing ranging with NASA Lunar Reconnaissance Orbiter for Intuitive Machines. Fun times.
 
-## Day 2 - ?
+## Day 2 - Cube Conundrum
+
+[PERL]
+
 _"Look, I'm telling you now - they're going to use this trebuchet and need to calculate trajectories. It'll miss, and they'll need to know the optimum settings for each target. The answer will be the product of the settings."_ (Prediction written on day 1). 
+
+OK, I was wrong. That prediction was too hard for day 2. Give it time ;)
+
+Today was a good input parsing exercise, then with trivial arithmetic on the values. This felt like a regex solution, because I think everything feels like a regex solution.
+I didn't read the problem quite clearly enough first time, and instead of finding out whether the games were possible, i was checking that there were at least enough cubes for the game, which isn't the same deal. Flipped it, and all worked.
+
+Experience from prior years suggested we'd need to keep track of the number of balls in each game for part 2, so I did that already in part 1, which then made part 2 a trivial modification but even so my difference in rank between part 1 and part 2 is much smaller than on day 1 which surprised me.
+
+Enjoy the rest of the day on Snow Island! ;)
 
 ## Day 3 - ?
 _" "_
