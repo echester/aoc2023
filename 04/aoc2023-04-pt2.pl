@@ -8,6 +8,10 @@
  
 # pragmas and modules...
 # ...it wouldn't be advent of code without List::Util ;)
+
+use Time::HiRes qw( time );
+my $start = time();
+
 use strict;
 use warnings;
 use List::Util qw| sum |;
@@ -46,3 +50,5 @@ while(<>) {
 shift @cards;
 # tell me how many cards i've had to deal with
 print sum @cards;
+
+printf("\nelapsed: %0.02f s\n", time() - $start);
