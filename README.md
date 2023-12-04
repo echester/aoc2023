@@ -10,7 +10,7 @@ _"It's easy to be enthusiastic at this point."_
 
 This was good fun, because it took me an _age_ to realise that letters were shared between written numbers... note to self to read the examples very carefully. I was worried about having to progressively build strings up from the left to replace only the first digit, but then hit upon a set of substitutions that respects the overlaps:
 
-```
+```perl
 s/one/o1e/g;
 s/two/t2o/g;
 s/three/t3e/g;
@@ -46,7 +46,16 @@ Experience from prior years suggested we'd need to keep track of the number of b
 Enjoy the rest of the day on Snow Island! ;)
 
 ## Day 3 - ?
-_" "_
+
+[PERL]
+
+_" print debug RULEZ "_
+
+Today was a bit of a shocker; I don't expect to get tripped up on part 1 (but I'm fully ready to be tripped up on part 2).
+I did it later than usual on a day that had more fun things in it, and it took long to deal with the edge cases.
+Comedy moment: to make the parsing easier, I first remove periods `s/\./ /` and then, hilariously, substituted any other symbols by the gear symbol: `s/\D/*/`. So that went well.
+
+
 
 ## Day 4 - Scratchcards
 
