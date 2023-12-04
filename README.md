@@ -54,7 +54,8 @@ _" "_
 
 _"sneaky Eric - made it look like recursion when it isn't."_
 Part 1 of this is _so_ easy its the shortest and fastest problem yet, and perfect for perl:
-```
+
+```perl
 use strict;
 use warnings;
 my $total = 0;
@@ -73,14 +74,15 @@ while(<>) {
 }
 print "$total\n";
 ```
-... so immediately, before even solving this, one by rights ought to be thinking part 2 is going to be horrific. As always, it pays to really read the thing carefully more than once because if you are still focussed on the score, then the whole thing looks like recursion. And really, that's probably a sound way to do it and there are probably funky iterables in python that just do all the hard work for you.
-I was happy to realise quickly that the answer required is the number of cards - so we don't actually care what the score is, or which cards contributed to it, nor need to do any reverse look-up kind of thing. For me, the fastest way was to have an array to hold card counts in, and nest a some fors() like this:
+... so immediately, before even solving this, one by rights ought to be thinking part 2 is going to be *horrific*. As always, it pays to really read the thing carefully more than once because if you are still focussed on the score, then the whole thing looks like recursion. And really, that's probably a sound way to do it and there are probably funky iterables in python that just do all the hard work for you.
+
+I was happy to realise quickly that the answer required is the number of cards - so we don't actually care what the score is, or which cards contributed to it, nor need to do any reverse look-up kind of thing. For me, the fastest way was to have an array to hold card counts in, and nest some fors() like this:
 ```
-for (all the cards) {
-	for (all the numbers on the cards) {
-		if (this number wins) {
-			for (each copy of this card) {
-				add copies of subsequent cards
+for (_all the cards_) {
+	for (_all the numbers on the cards_) {
+		if (_this number wins_) {
+			for (_each copy of this card_) {
+				add copies of subsequent cards!
 			}
 		}
 	}
