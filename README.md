@@ -48,8 +48,42 @@ Enjoy the rest of the day on Snow Island! ;)
 ## Day 3 - ?
 _" "_
 
-## Day 4 - ?
-_" "_
+## Day 4 - Scratchcards
+_"sneaky Eric - made it look like recursion when it isn't."_
+Part 1 of this is _so_ easy its the shortest and fastest problem yet, and perfect for perl:
+```
+use strict;
+use warnings;
+my $total = 0;
+while(<>) {
+	chomp;
+	my @wins;
+	my $score = 0;
+	/^.+:\s*(.+)\|\s*(.+)$/;
+	push @wins, split /\s+/, $1;
+	foreach my $n (split /\s+/, $2) {
+		if(grep(/^$n$/, @wins)) {
+			$score = ($score == 0) ? 1 : $score * 2;
+		}
+	}
+	$total += $score;
+}
+print "$total\n";
+```
+... so immediately, before even solving this, one by rights ought to be thinking part 2 is going to be horrific. As always, it pays to really read the thing carefully more than once because if you are still focussed on the score, then the whole thing looks like recursion. And really, that's probably a sound way to do it and there are probably funky iterables in python that just do all the hard work for you.
+I was happy to realise quickly that the answer required is the number of cards - so we don't actually care what the score is, or which cards contributed to it, nor need to do any reverse look-up kind of thing. For me, the fastest way was to have an array to hold card counts in, and nest a some fors() like this:
+```
+for (all the cards) {
+	for (all the numbers on the cards) {
+		if (this number wins) {
+			for (each copy of this card) {
+				add copies of subsequent cards
+			}
+		}
+	}
+}
+```
+I had some print debug in there which made it slow, but I cleaned it up before adding to repo and (shocker) for part 2 I added some explanatory comments.
 
 ## Day 5 - ?
 _" "_
