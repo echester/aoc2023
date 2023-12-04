@@ -49,6 +49,9 @@ Enjoy the rest of the day on Snow Island! ;)
 _" "_
 
 ## Day 4 - Scratchcards
+
+[PERL]
+
 _"sneaky Eric - made it look like recursion when it isn't."_
 Part 1 of this is _so_ easy its the shortest and fastest problem yet, and perfect for perl:
 ```

@@ -10,7 +10,7 @@
 # ...it wouldn't be advent of code without List::Util ;)
 use strict;
 use warnings;
-use List::Util qw|sum|;
+use List::Util qw| sum |;
 
 # array to hold counts of cards in
 my @cards;
@@ -32,8 +32,7 @@ while(<>) {
 	foreach my $n (split /\s+/, $2) {
 		# check if this number is a winning number
 		if(grep(/^$n$/, @wins)) {
-			# if it is, loop over the number of copies of this card
-			# we already have
+			# if it is, loop over copies of this card
 			for (0..$cards[$.]-1) {
 				# add a copy of the card at the next offset
 				$cards[$.+$r]++;
@@ -43,6 +42,7 @@ while(<>) {
 		}
 	}
 }
-
-shift(@cards);
-print sum(@cards);
+# just avoiding a warning on the zeroth card
+shift @cards;
+# tell me how many cards i've had to deal with
+print sum @cards;
