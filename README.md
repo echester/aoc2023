@@ -103,8 +103,26 @@ I had some print debug in there which made it slow, but I cleaned it up before a
 ## Day 5 - ?
 _" "_
 
-## Day 6 - ?
-_" "_
+## Day 6 - Wait For It
+
+[PERL]
+
+_" If it wasn't for this <bOaT RaCe@> i'd have walked off this island today. "_
+
+It looked too easy to be true, but it was true. I don't know why. I'm wondering if perhaps Eric has "plan B" puzzle days that he can activate depending upon the backlash to some insane recursive bigint shenanigans he's wrought upon us.
+
+I started using List::Util and 2 separate subs to get the distance travelled and ways to win, but the whole thing folds down into just a few functional lines. The core of the thing is: 
+```perl
+for (my $p=0; $p<=$t; $p++) { $w++ if ($p*($t-$p) > $d); }
+
+```
+
+The real shocker was that part 2 was not a grossly non-linear extension: it was just a single line change to run a single race:
+```perl
+	if(0) { s/\s+//g; } # part 2 switch
+```
+
+Phew!
 
 ## Day 7 - ?
 _" "_
