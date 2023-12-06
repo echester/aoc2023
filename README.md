@@ -119,7 +119,7 @@ for (my $p=0; $p<=$t; $p++) { $w++ if ($p*($t-$p) > $d); }
 
 The real shocker was that part 2 was not a grossly non-linear extension: it was just a single line change to run a single race:
 ```perl
-	if(0) { s/\s+//g; } # part 2 switch
+if(0) { s/\s+//g; } # part 2 switch
 ```
 
 Phew!
