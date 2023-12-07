@@ -11,6 +11,7 @@ use strict;
 use warnings;
 # an array of hands
 my @popeth;
+my $part2 = 0;
 
 # a map of possible outcomes to type ranking
 my %tr = ('11111'=>1, '1112'=>2, '122'=>3, '113'=>4, '23'=>5, '14'=>6, '5'=>7); 	
@@ -20,8 +21,30 @@ while(<>) {
 	my ($hand, $bid) = split ' ';
 	# replace picture cards and aces with numerical values
 	my @cards = intify(split //, $hand);
+	# count jokers (added in part 2)
+	my $jokers = $hand =~ tr/J//;
 	# prepend the type ranking value to the hand so it sorts on this first, then cards
-	unshift @cards, ($tr{cyfri(@cards)}); 
+	my $typerank = $tr{cyfri(@cards)};
+
+	# part 2 switch ###
+	if ($part2) { 
+		if ($jokers == 1) {
+			if ($typerank == 1) { $typerank = 2; }
+			elsif ($typerank == 2) { $typerank = 4; }
+			elsif ($typerank == 3) { $typerank = 5; }
+			elsif ($typerank == 4) { $typerank = 6; }
+			elsif ($typerank == 6) { $typerank = 7; }
+		}
+		elsif ($jokers == 2) {
+			$typerank += 2;
+			if ($typerank == 5) { $typerank += 1; }
+			}
+		elsif ($jokers == 3) { $typerank += 2; }
+		elsif ($jokers == 4) { $typerank = 7; }
+	}
+	###################
+
+	unshift @cards, $typerank;
 	# save the new 'card', which looks something like fgfngq_765
 	push @popeth, join('', map(chr(100+$_), @cards)) . '_' . $bid;
 }
@@ -49,7 +72,6 @@ sub cyfri {
 	return join '', sort @cyf;
 }
 
-
 sub intify {
 	# for every element in an array, replace instances of letters with numbers
 	my @a = @_;
@@ -57,7 +79,10 @@ sub intify {
 		$a[$i] =~ s/T/10/g;
 		$a[$i] =~ s/K/13/g;
 		$a[$i] =~ s/Q/12/g;
-		$a[$i] =~ s/J/11/g;
+		$a[$i] =~ s/J/11/g;			
+		if ($part2) {
+			$a[$i] =~ s/11/1/g;
+		}
 		$a[$i] =~ s/A/14/g;		
 	}
 	return @a;

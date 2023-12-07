@@ -124,8 +124,32 @@ if(0) { s/\s+//g; } # part 2 switch
 
 Phew!
 
-## Day 7 - ?
-_" "_
+## Day 7 - Camel Cards
+
+[PERL]
+
+_"Algorithmically, a fun time was had by all."_
+
+This was a fun challenge. Not trivial, loads of possible approaches, but it quickly became apparent that a multi-level sort was unnecessary. Instead, I map the hand, including the hand type ranking, into a string, then sort it alphabetically. It probably unnecessary if you're prepared to sit and design your own sort operator and wrap it around a spaceship operator (<=> in perl), but really, I cba.
+
+Here's the thing though, wanna see something _gross_? Check out what gave me the part 2 answer most quickly because there were so few cases I coded them all explicitly...
+
+```perl
+if ($part2) { # part 2 switch
+		if (($jokers == 1) && ($typerank == 1)) { $typerank = 2; }
+		elsif (($jokers == 1) && ($typerank == 2)) { $typerank = 4; }
+		elsif (($jokers == 1) && ($typerank == 3)) { $typerank = 5; }
+		elsif (($jokers == 1) && ($typerank == 4)) { $typerank = 6; }
+		elsif (($jokers == 1) && ($typerank == 6)) { $typerank = 7; }
+		elsif (($jokers == 2) && ($typerank == 2)) { $typerank = 4; }
+		elsif (($jokers == 2) && ($typerank == 3)) { $typerank = 6; }
+		elsif (($jokers == 2) && ($typerank == 5)) { $typerank = 7; }
+		elsif (($jokers == 3) && ($typerank == 4)) { $typerank = 6; }
+		elsif (($jokers == 3) && ($typerank == 5)) { $typerank = 7; }
+		elsif (($jokers == 4) && ($typerank == 6)) { $typerank = 7; }
+	}
+```
+That's so disgraceful I still can't quite believe I'm fessing up enough to put it in the readme. Colour me honest.
 
 ## Day 8 - ?
 _" "_

@@ -1,15 +1,3 @@
-
-Advent of Code
-
-    [About][Events][Shop][Settings][Log Out]
-
-Ed Chester (AoC++) 10*
-      /^2023$/
-
-    [Calendar][AoC++][Sponsors][Leaderboard][Stats]
-
-Our sponsors help make Advent of Code possible:
-Honeycomb - On call for the holidays? Honeycomb adopters are happier and less burned out because we make your complex systems easy to understand.
 --- Day 7: Camel Cards ---
 
 Your all-expenses-paid trip turns out to be a one-way, five-minute ride in an airship. (At least it's a cool airship!) It drops you off at the edge of a vast desert and descends back to Island Island.
@@ -67,8 +55,6 @@ Now, you can determine the total winnings of this set of hands by adding up the 
 Find the rank of every hand in your set. What are the total winnings?
 
 Your puzzle answer was 248812215.
-
-The first half of this puzzle is complete! It provides one gold star: *
 --- Part Two ---
 
 To make things a little more interesting, the Elf introduces one additional rule. Now, J cards are jokers - wildcards that can act like whatever card would make the hand the strongest type possible.
@@ -93,8 +79,4 @@ With the new joker rule, the total winnings in this example are 5905.
 
 Using the new joker rule, find the rank of every hand in your set. What are the new total winnings?
 
-Answer:
-
-Although it hasn't changed, you can still get your puzzle input.
-
-You can also [Shareon Twitter Mastodon] this puzzle.
+Your puzzle answer was 250057090.
