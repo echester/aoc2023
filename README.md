@@ -151,11 +151,29 @@ if ($part2) { # part 2 switch
 ```
 That's so disgraceful I still can't quite believe I'm fessing up enough to put it in the readme. Colour me honest.
 
-## Day 8 - ?
-_" "_
+## Day 8 - Haunted Wasteland
+
+[PERL]
+
+_" urgh. that's all i have to say about that. "_
 
 _Predictive comment: Just creating this repo in mid-November. So - day 8. This is where I guess I will get to before it gets too hard to complete both parts before breakfast and get the kids to school. Let's see how well that stacks up against reality. 3 weeks to go._
 
+Once I understood that Eric lied his socks off about "simultaneously", and that it was sufficient to work out the endgame for each starting point separately then LCM them, it was fine. 
+
+Until I couldn't remember a fast way to do prime factorisation in perl, and also waaaay ran out of time. So I used
+[this site](https://www.calculatorsoup.com/calculators/math/lcm.php) instead.
+
+The other comedy was that in my smugness, I forgot to implement "simultaneously" by resetting my move counter every time, so the steps got silly, so the first attempt at their LCM was vaaaaaaassssst. 
+
+But hey, check out part 1, i think its pretty cute.
+```perl
+while ($yma ne 'ZZZ') {
+	$yma = $nodes{$yma}->[index 'LR', $turns[$steps % @turns]];
+	$steps++;
+}
+```
+(_yma_ is 'here' in Welsh, in the unlikely event you were wondering.)
 
 ## Day 9 - ?
 _" "_
