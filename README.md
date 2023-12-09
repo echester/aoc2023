@@ -184,7 +184,7 @@ while ($yma ne 'ZZZ') {
 _"part 2, are you for real? I publicly said on day 6 that that was the only time part 2 would take 8 characters. Here, it took 7. Foiled again. Comments added post-submission (ofc).
 "_
 
-I did, briefly, try a subtraction-based approach to part 2, and wrote it out on paper. As soon as I wrote all 3 test records out, it was shockingly obvious that there is nothing needed except to reverse the records. Bonkers. I was expected a depth-first search or something properly miserable to ruin my weekend, and all I needed was: 
+I did, briefly, try a subtraction-based approach to part 2, and wrote it out on paper. As soon as I wrote all 3 test records out, it was shockingly obvious that there is nothing needed except to reverse the records. Bonkers. I was expecting a depth-first search or something properly miserable to ruin my weekend, and all I needed was: 
 
 ```perl
 my @row = (1) ? reverse split / / : split / /;
