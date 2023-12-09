@@ -2,6 +2,8 @@
 A repo for my efforts for AoC 2023. Because I can't not. Argh. 
 Here's what its all about: [[aoc2023](https://adventofcode.com)]
 
+The _"comments"_ like this for each day are header comments from my code.
+
 ## Day 1 - Trebuchet?!
 
 [PERL]
@@ -175,8 +177,18 @@ while ($yma ne 'ZZZ') {
 ```
 (_yma_ is 'here' in Welsh, in the unlikely event you were wondering.)
 
-## Day 9 - ?
-_" "_
+## Day 9 - Mirage Maintenance
+
+[PERL]
+
+_"part 2, are you for real? I publicly said on day 6 that that was the only time part 2 would take 8 characters. Here, it took 7. Foiled again. Comments added post-submission (ofc).
+"_
+
+I did, briefly, try a subtraction-based approach to part 2, and wrote it out on paper. As soon as I wrote all 3 test records out, it was shockingly obvious that there is nothing needed except to reverse the records. Bonkers. I was expected a depth-first search or something properly miserable to ruin my weekend, and all I needed was: 
+
+```perl
+my @row = (1) ? reverse split / / : split / /;
+```
 
 ## Day 10 - ?
 _" "_
