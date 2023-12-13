@@ -199,8 +199,52 @@ _" "_
 ## Day 12 - ?
 _" "_
 
-## Day 13 - ?
-_" "_
+## Day 13 - Point of Incidence
+
+[PERL]
+
+This day wins the award for the maximum number of commented out lines (before clean-up) and the maximum amount of print debug. You should have seen it. It was like a BASIC program from the '80s with PRINT all over it. First part done quickly, then went for lunch after twting that the hamming
+distance wasn't enough to solve the problem. By the end of lunch I convinced myself that actually it was enough to solve the problem, for both parts! Tidy. 
+
+Its worth noting that the solution depended upon Eric being very clever, but not evil: a single smudge that introduced 2 new mirrors wouldn't be caught by my solution. 
+
+While I could have sat and coded my own hamming distance function, this elegant little trick was courtesy of the perl monks: XOR the strings!
+```perl
+sub hamming {
+	my $diff = $_[0] ^ $_[1];
+	return $diff =~ tr/\0//c;
+}
+```
+During clean up, i realised some functions had poor names. For example, findmirrors() no longer told me where the mirrors were, it returned the total number of rows above a mirror accumulated over all patterns. It was renamed:
+```perl
+sub findTotalLinesAboveMirrorsInAllPatternsObviously {
+	my $ar = shift;
+	my @matrix = @$ar;
+	my $retval = 0;
+	my $maxhd = 0;
+	for (my $i=0; $i<$#matrix; $i++) {
+		my @ab = (0..$i);
+		my @be;
+		foreach (@ab) { unshift @be, 1+$i+$_ if $_+$i < $#matrix; }
+		# remove excess above
+		while (@ab > @be) { shift @ab; }
+		# loop over row pairs
+		for (my $k=0; $k<=$#be; $k++) {
+			# get hd
+			my $hd = hamming($matrix[$ab[$k]], $matrix[$be[$k]]);
+			# track maximum hd
+			if ($maxhd < $hd) { $maxhd = $hd; }
+		}
+		# if we're in threshold for this row, its got a mirror under it
+		$retval += $i + 1 if ($maxhd == $threshold);
+		# reset the tracking
+		$maxhd = 0;		
+	}
+	return $retval;
+}
+```
+
+The other little thing I like in all this is `unshift` to fill an array of lines below a candidate mirror, and using that to `shift` away unneeded rows above the mirror (because we don't care about reflections that fall outside the mapped space).
 
 ## Day 14 - ?
 _" "_
