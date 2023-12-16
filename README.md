@@ -296,7 +296,6 @@ The problem here was figuring out a data structure that was easier than an array
 
 Very ugly code indeed, even after cleanup. Here's the nicer part, the main loop. 
 ```perl
-my @ins;
 our @boxes;
 
 while(<>) {
