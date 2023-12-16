@@ -17,8 +17,8 @@ our @boxes;
 # main loop
 while(<>) {
 	chomp;
-	foreach my $ins (split /,/) {
-		$ins =~ /^(\w+)([=-])(\d+)?$/;
+	foreach (split /,/) {
+		/^(\w+)([=-])(\d+)?$/;
 		process (\@boxes, hash($1), $1, $2, $3);
 	}
 }
