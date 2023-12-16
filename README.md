@@ -246,11 +246,71 @@ sub findTotalLinesAboveMirrorsInAllPatternsObviously {
 
 The other little thing I like in all this is `unshift` to fill an array of lines below a candidate mirror, and using that to `shift` away unneeded rows above the mirror (because we don't care about reflections that fall outside the mapped space).
 
-## Day 14 - ?
-_" "_
+## Day 14 - Parabolic Reflector Dish
 
-## Day 15 - ?
-_" "_
+[PERL]
+
+_"I woke up at 05:11 and thought, YES!"_
+
+First part was fast but inelegant. I reused my `transpose()` function from yesterday, and also made a variant of it called `rotright()`, and then used this pair together with a function `tilt()` that only  tilted the rocks to the north. Moving round rocks (O) is an easy alphabetic sort inside string groups split on cubic rocks (#).
+
+## Day 15 - Lens Library
+
+[PERL]
+
+
+### Part 1
+_"This is way too suspiscious. We're screwed."_
+
+Look how noddy this is. This is the kind of thing that drives The Fear Of Part Two into the hearts of all AoC folks.
+```perl
+my $sum = 0;
+
+while(<>) {
+	chomp;
+	$sum += hash($_) foreach split /,/;
+}
+
+print $sum;
+
+sub hash {
+	my $v = 0;
+	foreach my $c (split //, shift) {
+		$v += ord $c;
+		$v *= 17;
+		$v %= 256;
+	}
+	return $v;
+}
+
+```
+
+### Part 2
+_"Slow and ugly as a maimed tortoise wearing a sketchy wig."_
+
+(but not as bad as feared!)
+
+Yes, it should have been mapped hashes all the way down, like the reindeer said, but i was having some syntax/sigil difficulty in the small hours.
+
+The problem here was figuring out a data structure that was easier than an array of an array of hashes. This might have been the day to switch to python and have a slightly easier time of it using dicts to hold all this stuff, and maybe even define a lens class.
+
+Very ugly code indeed, even after cleanup. Here's the nicer part, the main loop. 
+```perl
+my @ins;
+our @boxes;
+
+while(<>) {
+	chomp;
+	foreach my $ins (split /,/) {
+		$ins =~ /^(\w+)([=-])(\d+)?$/;
+		process (\@boxes, hash($1), $1, $2, $3);
+	}
+}
+
+say power(\@boxes);
+```
+
+Looks OK, right? Well you should see the horrors that used to live within `addlens()` and `removelens()`. Only, you can't because i tidied up. A bit.
 
 ## Day 16 - ?
 _" "_
