@@ -317,8 +317,31 @@ _" "_
 ## Day 17 - ?
 _" "_
 
-## Day 18 - ?
-_" "_
+## Day 18 - Lavaduct Lagoon
+
+[PERL]
+
+_"A shoestring algorithm fiasco, waiting to dance until nobody else is around, treading on the tiles as lightly as it can and hoping beyond hope that there isn't a fencepost or off-by-one error waiting to trip it up mid-step, poised, hardly daring to breathe until the pirouette brings it, burning yet silent, back to the moment of the very first leap."_
+
+_"Elf: Get the feckin lava in the tank. "_
+
+Of all the days so far, this is the one when i almost reached for python because i know i did this in python last year and it would have been near-ready to go. Reimplemented it, a bit clunkily, in perl without any thought for, say, an elegant hash of offsets: just raw in-your-face regex substitions, and yes, a bunch of `elsif`. Bite me. 
+
+The magic of using a proper algorithm for the area of a polygon is part 2 scales easily: 
+
+```perl
+# part 2
+	if (1) {
+		# grab direction
+		$dir = substr $col, -1;
+		$dir =~ s/0/R/;
+		$dir =~ s/1/D/;
+		$dir =~ s/2/L/;
+		$dir =~ s/3/U/;
+		# convert distance, now huge, ignoring the #
+		$dist = hex substr $col, 1, -1;
+	}
+```
 
 ## Day 19 - ?
 _" "_
