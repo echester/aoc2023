@@ -57,7 +57,11 @@ Today was a bit of a shocker; I don't expect to get tripped up on part 1 (but I'
 I did it later than usual on a day that had more fun things in it, and it took long to deal with the edge cases.
 Comedy moment: to make the parsing easier, I first remove periods `s/\./ /` and then, hilariously, substituted any other symbols by the gear symbol: `s/\D/*/`. So that went well.
 
+Much later...
 
+Fixed this nonsense and now (Dec 21) being so far down the AoC rabbithole, its hard to imagine why part 2 was so hard at the time. My brain wasn't sufficiently warmed up (== suspicious/jellylike) perhaps.
+
+However - yes, there are some inefficient and ugly things here, I ought to be able to do this in about half as much code. Part 1 ought to be rewritten to use the functions added in part 2, and `map { }` should have been rolled out to get rid of some nested loops. Oh well. Does it work? Yes. Move along.
 
 ## Day 4 - Scratchcards
 
