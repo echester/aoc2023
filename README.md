@@ -47,7 +47,7 @@ Experience from prior years suggested we'd need to keep track of the number of b
 
 Enjoy the rest of the day on Snow Island! ;)
 
-## Day 3 - ?
+## Day 3 - Gear Ratios
 
 [PERL]
 
