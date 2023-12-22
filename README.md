@@ -107,7 +107,20 @@ for (_all the cards_) {
 I had some print debug in there which made it slow, but I cleaned it up before adding to repo and (shocker) for part 2 I added some explanatory comments.
 
 ## Day 5 - ?
-_" "_
+
+[PERL]
+
+_"Somedays, looking out over the field of seeds and gardening materials and junk, elves arsing around with maps instead of actually doing the work, one thinks to oneself, 'I shouldn't have to build an array of arrays to organise this lot.'"_
+
+_"Hashtag justsayin'."_
+
+The oik in this one was remembering to drop out of a map once the first rule had been applied. That took embarrassingly long to debug:
+```perl
+if ( ($seed >= $r[0]) && ($seed <= $r[1]) ) {
+	$seed += $r[2];
+	last;
+}
+```
 
 ## Day 6 - Wait For It
 
