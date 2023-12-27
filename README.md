@@ -382,7 +382,7 @@ _" "_
 
 [PERL]
 
-_"# plotting the graph, manually removing links, then counting the subgraphs
+_"Plotting the graph, manually removing links, then counting the subgraphs
 seems to be a completely valid approach. is it elegant? no. satisfying? also no. did i try to do this purely programmatically? yes, and i believe the approach is sound but i'm not waiting around for the answer."_
 
 Look at this bunch of cuties in my brute-force algorithmic approach:
