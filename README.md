@@ -378,7 +378,32 @@ _" "_
 ## Day 24 - ?
 _" "_
 
-## Day 25 - ?
-_" "_
+## Day 25 - Snowverload
 
-Phew. This was all so unnecessary.
+[PERL]
+
+_"# plotting the graph, manually removing links, then counting the subgraphs
+seems to be a completely valid approach. is it elegant? no. satisfying? also no. did i try to do this purely programmatically? yes, and i believe the approach is sound but i'm not waiting around for the answer."_
+
+Look at this bunch of cuties in my brute-force algorithmic approach:
+```perl
+use Algorithm::Combinatorics qw| combinations permutations |;
+use List::Util qw| product |;
+use List::MoreUtils qw| natatime |;
+use Storable qw| dclone |;
+use Graph;
+```
+
+In short - I choose every possible set of 6 different nodes (3 edges).
+I choose every possible ordering of those nodes to create the possible set of edges.
+I remove those edges from the model, then create and analyse the remaining graph. If there are 2 separated graphs, it stops. 
+It also takes a very. long. time. 
+
+# Endgame
+
+Phew. This was all so unnecessary. 
+
+See you all again next year.
+But also, I'm glad I didn't go using python this year as soon as the data looked like a `dict()` or tuple or something needing a convenient iterable or comprehension. I battled it out with loops over hashes, the perl way.
+
+Thanks Eric!
