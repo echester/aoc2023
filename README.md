@@ -375,8 +375,15 @@ _" "_
 ## Day 23 - ?
 _" "_
 
-## Day 24 - ?
-_" "_
+## Day 24 - Never Tell Me The Odds
+
+[PERL]
+
+_"Came back to this on dec 28. Knew at the time how to do it, but couldn't get time with computer on xmas eve out in the wilderness; read it on my phone. However, this only does part 1. I haven't wrapped my noggin around how to do part 2 yet."_
+
+This is just a day of geometry and mechanics and remember the equations of straight lines and then solving sets of them to find intersections. Couple of typo tripping points, and some unnecessary declarations of variables just to keep things square. 
+
+Part 2 I may not bother with.
 
 ## Day 25 - Snowverload
 
